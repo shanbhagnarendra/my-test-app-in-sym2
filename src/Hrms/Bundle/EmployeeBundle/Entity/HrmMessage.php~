@@ -1,0 +1,46 @@
+<?php
+
+namespace Hrms\Bundle\EmployeeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * HrmMessage
+ *
+ * @ORM\Table(name="hrm_message")
+ * @ORM\Entity
+ */
+class HrmMessage
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lang_code", type="string", length=50, nullable=false)
+     */
+    private $langCode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="key_name", type="string", length=50, nullable=false)
+     */
+    private $keyName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="key_value", type="string", length=200, nullable=false)
+     */
+    private $keyValue;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

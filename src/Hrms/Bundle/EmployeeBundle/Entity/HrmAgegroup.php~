@@ -1,0 +1,53 @@
+<?php
+
+namespace Hrms\Bundle\EmployeeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * HrmAgegroup
+ *
+ * @ORM\Table(name="hrm_agegroup")
+ * @ORM\Entity
+ */
+class HrmAgegroup
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="color_code", type="string", length=10, nullable=false)
+     */
+    private $colorCode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="age_limit", type="string", length=15, nullable=false)
+     */
+    private $ageLimit;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="start_age", type="integer", nullable=true)
+     */
+    private $startAge;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="end_age", type="integer", nullable=true)
+     */
+    private $endAge;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

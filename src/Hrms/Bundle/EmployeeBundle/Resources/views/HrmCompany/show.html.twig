@@ -1,0 +1,122 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>HrmCompany</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Idcompany</th>
+                <td>{{ entity.idCompany }}</td>
+            </tr>
+            <tr>
+                <th>Idadmin</th>
+                <td>{{ entity.idAdmin }}</td>
+            </tr>
+            <tr>
+                <th>Companyname</th>
+                <td>{{ entity.companyName }}</td>
+            </tr>
+            <tr>
+                <th>Companyinfo</th>
+                <td>{{ entity.companyInfo }}</td>
+            </tr>
+            <tr>
+                <th>Displayname</th>
+                <td>{{ entity.displayname }}</td>
+            </tr>
+            <tr>
+                <th>Emailid</th>
+                <td>{{ entity.emailId }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ entity.password }}</td>
+            </tr>
+            <tr>
+                <th>Repassword</th>
+                <td>{{ entity.rePassword }}</td>
+            </tr>
+            <tr>
+                <th>Role</th>
+                <td>{{ entity.role }}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ entity.address }}</td>
+            </tr>
+            <tr>
+                <th>Taxid</th>
+                <td>{{ entity.taxId }}</td>
+            </tr>
+            <tr>
+                <th>Twitterid</th>
+                <td>{{ entity.twitterId }}</td>
+            </tr>
+            <tr>
+                <th>Facebookid</th>
+                <td>{{ entity.facebookId }}</td>
+            </tr>
+            <tr>
+                <th>Linkedinid</th>
+                <td>{{ entity.linkedinId }}</td>
+            </tr>
+            <tr>
+                <th>Logo</th>
+                <td>{{ entity.logo }}</td>
+            </tr>
+            <tr>
+                <th>Language</th>
+                <td>{{ entity.language }}</td>
+            </tr>
+            <tr>
+                <th>Currency</th>
+                <td>{{ entity.currency }}</td>
+            </tr>
+            <tr>
+                <th>Timezone</th>
+                <td>{{ entity.timezone }}</td>
+            </tr>
+            <tr>
+                <th>Adddate</th>
+                <td>{{ entity.addDate|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Lastlogin</th>
+                <td>{{ entity.lastLogin|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Isactive</th>
+                <td>{{ entity.isactive }}</td>
+            </tr>
+            <tr>
+                <th>Ip</th>
+                <td>{{ entity.ip }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('hrmcompany') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('hrmcompany_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('hrmcompany_delete', { 'id': entity.id }) }}" method="post">
+            <input type="hidden" name="_method" value="DELETE" />
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>
+{% endblock %}

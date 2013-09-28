@@ -1,0 +1,63 @@
+<?php
+
+namespace Hrms\Bundle\EmployeeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * HrmCompanyhrform
+ *
+ * @ORM\Table(name="hrm_companyhrform")
+ * @ORM\Entity
+ */
+class HrmCompanyhrform
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="form_name", type="string", length=255, nullable=false)
+     */
+    private $formName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="file_name", type="string", length=255, nullable=false)
+     */
+    private $fileName;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="add_date", type="datetime", nullable=false)
+     */
+    private $addDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ip", type="string", length=255, nullable=false)
+     */
+    private $ip;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Hrms\Bundle\EmployeeBundle\Entity\HrmCompany
+     *
+     * @ORM\ManyToOne(targetEntity="Hrms\Bundle\EmployeeBundle\Entity\HrmCompany")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="company", referencedColumnName="id")
+     * })
+     */
+    private $company;
+
+
+}

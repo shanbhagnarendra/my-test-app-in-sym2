@@ -1,0 +1,80 @@
+<?php
+
+namespace Hrms\Bundle\EmployeeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * HrmEmployeeleaverequest
+ *
+ * @ORM\Table(name="hrm_employeeleaverequest")
+ * @ORM\Entity
+ */
+class HrmEmployeeleaverequest
+{
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="from_date", type="date", nullable=false)
+     */
+    private $fromDate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="to_date", type="date", nullable=false)
+     */
+    private $toDate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="work_days", type="integer", nullable=false)
+     */
+    private $workDays;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="notes", type="text", nullable=false)
+     */
+    private $notes;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="leave_status", type="boolean", nullable=false)
+     */
+    private $leaveStatus;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Hrms\Bundle\EmployeeBundle\Entity\HrmCompanyleavetype
+     *
+     * @ORM\ManyToOne(targetEntity="Hrms\Bundle\EmployeeBundle\Entity\HrmCompanyleavetype")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="leave_type", referencedColumnName="id")
+     * })
+     */
+    private $leaveType;
+
+    /**
+     * @var \Hrms\Bundle\EmployeeBundle\Entity\HrmEmployee
+     *
+     * @ORM\ManyToOne(targetEntity="Hrms\Bundle\EmployeeBundle\Entity\HrmEmployee")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="employee", referencedColumnName="id")
+     * })
+     */
+    private $employee;
+
+
+}

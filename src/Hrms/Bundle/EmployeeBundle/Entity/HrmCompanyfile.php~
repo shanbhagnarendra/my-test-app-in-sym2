@@ -1,0 +1,70 @@
+<?php
+
+namespace Hrms\Bundle\EmployeeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * HrmCompanyfile
+ *
+ * @ORM\Table(name="hrm_companyfile")
+ * @ORM\Entity
+ */
+class HrmCompanyfile
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_folder", type="integer", nullable=false)
+     */
+    private $idFolder;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="filename", type="string", length=100, nullable=false)
+     */
+    private $filename;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="filesize", type="string", length=20, nullable=true)
+     */
+    private $filesize;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="file_ext_type", type="string", length=5, nullable=true)
+     */
+    private $fileExtType;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="add_date", type="datetime", nullable=false)
+     */
+    private $addDate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Hrms\Bundle\EmployeeBundle\Entity\HrmCompany
+     *
+     * @ORM\ManyToOne(targetEntity="Hrms\Bundle\EmployeeBundle\Entity\HrmCompany")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="company", referencedColumnName="id")
+     * })
+     */
+    private $company;
+
+
+}

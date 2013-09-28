@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Hrms\Bundle\EmployeeBundle\Entity\HrmCompanynotification" table="hrm_companynotification">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="birthday" type="boolean" column="birthday" nullable="true"/>
+    <field name="contractEnd" type="boolean" column="contract_end" nullable="true"/>
+    <field name="notificationStatus" type="boolean" column="notification_status" nullable="true"/>
+    <field name="empAdd" type="boolean" column="emp_add" nullable="true"/>
+    <field name="empModify" type="boolean" column="emp_modify" nullable="true"/>
+    <field name="empRemove" type="boolean" column="emp_remove" nullable="true"/>
+    <field name="addDate" type="datetime" column="add_date" nullable="false"/>
+    <many-to-one field="employee" target-entity="HrmEmployee">
+      <join-columns>
+        <join-column name="employee" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="company" target-entity="HrmCompany">
+      <join-columns>
+        <join-column name="company" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

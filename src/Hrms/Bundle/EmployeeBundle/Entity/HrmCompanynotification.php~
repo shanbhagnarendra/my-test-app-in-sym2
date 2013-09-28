@@ -1,0 +1,94 @@
+<?php
+
+namespace Hrms\Bundle\EmployeeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * HrmCompanynotification
+ *
+ * @ORM\Table(name="hrm_companynotification")
+ * @ORM\Entity
+ */
+class HrmCompanynotification
+{
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="birthday", type="boolean", nullable=true)
+     */
+    private $birthday;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="contract_end", type="boolean", nullable=true)
+     */
+    private $contractEnd;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="notification_status", type="boolean", nullable=true)
+     */
+    private $notificationStatus;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="emp_add", type="boolean", nullable=true)
+     */
+    private $empAdd;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="emp_modify", type="boolean", nullable=true)
+     */
+    private $empModify;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="emp_remove", type="boolean", nullable=true)
+     */
+    private $empRemove;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="add_date", type="datetime", nullable=false)
+     */
+    private $addDate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Hrms\Bundle\EmployeeBundle\Entity\HrmEmployee
+     *
+     * @ORM\ManyToOne(targetEntity="Hrms\Bundle\EmployeeBundle\Entity\HrmEmployee")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="employee", referencedColumnName="id")
+     * })
+     */
+    private $employee;
+
+    /**
+     * @var \Hrms\Bundle\EmployeeBundle\Entity\HrmCompany
+     *
+     * @ORM\ManyToOne(targetEntity="Hrms\Bundle\EmployeeBundle\Entity\HrmCompany")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="company", referencedColumnName="id")
+     * })
+     */
+    private $company;
+
+
+}

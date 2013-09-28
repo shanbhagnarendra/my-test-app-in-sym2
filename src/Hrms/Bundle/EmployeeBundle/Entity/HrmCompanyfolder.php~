@@ -1,0 +1,56 @@
+<?php
+
+namespace Hrms\Bundle\EmployeeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * HrmCompanyfolder
+ *
+ * @ORM\Table(name="hrm_companyfolder")
+ * @ORM\Entity
+ */
+class HrmCompanyfolder
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_parent", type="integer", nullable=false)
+     */
+    private $idParent;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="folder_name", type="string", length=100, nullable=false)
+     */
+    private $folderName;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="add_date", type="datetime", nullable=false)
+     */
+    private $addDate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Hrms\Bundle\EmployeeBundle\Entity\HrmCompany
+     *
+     * @ORM\ManyToOne(targetEntity="Hrms\Bundle\EmployeeBundle\Entity\HrmCompany")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="company", referencedColumnName="id")
+     * })
+     */
+    private $company;
+
+
+}

@@ -1,0 +1,83 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>HrmCompany list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Idcompany</th>
+                <th>Idadmin</th>
+                <th>Companyname</th>
+                <th>Companyinfo</th>
+                <th>Displayname</th>
+                <th>Emailid</th>
+                <th>Password</th>
+                <th>Repassword</th>
+                <th>Role</th>
+                <th>Address</th>
+                <th>Taxid</th>
+                <th>Twitterid</th>
+                <th>Facebookid</th>
+                <th>Linkedinid</th>
+                <th>Logo</th>
+                <th>Language</th>
+                <th>Currency</th>
+                <th>Timezone</th>
+                <th>Adddate</th>
+                <th>Lastlogin</th>
+                <th>Isactive</th>
+                <th>Ip</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('hrmcompany_show', { 'id': entity.id }) }}">{{ entity.idCompany }}</a></td>
+                <td>{{ entity.idAdmin }}</td>
+                <td>{{ entity.companyName }}</td>
+                <td>{{ entity.companyInfo }}</td>
+                <td>{{ entity.displayname }}</td>
+                <td>{{ entity.emailId }}</td>
+                <td>{{ entity.password }}</td>
+                <td>{{ entity.rePassword }}</td>
+                <td>{{ entity.role }}</td>
+                <td>{{ entity.address }}</td>
+                <td>{{ entity.taxId }}</td>
+                <td>{{ entity.twitterId }}</td>
+                <td>{{ entity.facebookId }}</td>
+                <td>{{ entity.linkedinId }}</td>
+                <td>{{ entity.logo }}</td>
+                <td>{{ entity.language }}</td>
+                <td>{{ entity.currency }}</td>
+                <td>{{ entity.timezone }}</td>
+                <td>{% if entity.addDate %}{{ entity.addDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.lastLogin %}{{ entity.lastLogin|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.isactive }}</td>
+                <td>{{ entity.ip }}</td>
+                <td>{{ entity.id }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('hrmcompany_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('hrmcompany_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('hrmcompany_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

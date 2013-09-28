@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Hrms\Bundle\EmployeeBundle\Entity\HrmCompanyreminder" table="hrm_companyreminder">
+    <id name="idReminder" type="integer" column="id_reminder">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="reminder" type="text" column="reminder" nullable="false"/>
+    <field name="reminderDate" type="datetime" column="reminder_date" nullable="false"/>
+    <field name="recurrenceStatus" type="boolean" column="recurrence_status" nullable="false"/>
+    <field name="status" type="boolean" column="status" nullable="false"/>
+    <field name="addDate" type="datetime" column="add_date" nullable="false"/>
+    <many-to-one field="company" target-entity="HrmCompany">
+      <join-columns>
+        <join-column name="company" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

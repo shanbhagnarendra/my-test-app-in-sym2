@@ -1,0 +1,49 @@
+<?php
+
+namespace Hrms\Bundle\EmployeeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * HrmPropertytype
+ *
+ * @ORM\Table(name="hrm_propertytype")
+ * @ORM\Entity
+ */
+class HrmPropertytype
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type_name", type="string", length=255, nullable=false)
+     */
+    private $typeName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type_description", type="string", length=50, nullable=false)
+     */
+    private $typeDescription;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Hrms\Bundle\EmployeeBundle\Entity\HrmCompany
+     *
+     * @ORM\ManyToOne(targetEntity="Hrms\Bundle\EmployeeBundle\Entity\HrmCompany")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="company", referencedColumnName="id")
+     * })
+     */
+    private $company;
+
+
+}

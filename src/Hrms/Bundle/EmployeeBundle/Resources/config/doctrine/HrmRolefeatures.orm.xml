@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Hrms\Bundle\EmployeeBundle\Entity\HrmRolefeatures" table="hrm_rolefeatures">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="isvisible" type="integer" column="isvisible" nullable="false"/>
+    <field name="id1" type="integer" column="id_1" nullable="false"/>
+    <field name="isvisible1" type="integer" column="isvisible_1" nullable="false"/>
+    <many-to-one field="modulefeatures" target-entity="HrmModulefeatures">
+      <join-columns>
+        <join-column name="modulefeatures" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="modules" target-entity="HrmModules">
+      <join-columns>
+        <join-column name="modules" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="roles" target-entity="HrmRoles">
+      <join-columns>
+        <join-column name="roles" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

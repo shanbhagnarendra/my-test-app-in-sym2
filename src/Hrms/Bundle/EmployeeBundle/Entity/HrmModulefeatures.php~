@@ -1,0 +1,63 @@
+<?php
+
+namespace Hrms\Bundle\EmployeeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * HrmModulefeatures
+ *
+ * @ORM\Table(name="hrm_modulefeatures")
+ * @ORM\Entity
+ */
+class HrmModulefeatures
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="features_name", type="string", length=50, nullable=false)
+     */
+    private $featuresName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="features_value", type="string", length=50, nullable=false)
+     */
+    private $featuresValue;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="iswriteaccess", type="boolean", nullable=false)
+     */
+    private $iswriteaccess;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="create_date", type="date", nullable=false)
+     */
+    private $createDate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Hrms\Bundle\EmployeeBundle\Entity\HrmModules
+     *
+     * @ORM\ManyToOne(targetEntity="Hrms\Bundle\EmployeeBundle\Entity\HrmModules")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="modules", referencedColumnName="id")
+     * })
+     */
+    private $modules;
+
+
+}

@@ -1,0 +1,49 @@
+<?php
+
+namespace Hrms\Bundle\EmployeeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * HrmCompanybenefits
+ *
+ * @ORM\Table(name="hrm_companybenefits")
+ * @ORM\Entity
+ */
+class HrmCompanybenefits
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="benefit_name", type="string", length=100, nullable=false)
+     */
+    private $benefitName;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="is_set", type="boolean", nullable=false)
+     */
+    private $isSet;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="id", type="boolean")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Hrms\Bundle\EmployeeBundle\Entity\HrmCompany
+     *
+     * @ORM\ManyToOne(targetEntity="Hrms\Bundle\EmployeeBundle\Entity\HrmCompany")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="company", referencedColumnName="id")
+     * })
+     */
+    private $company;
+
+
+}

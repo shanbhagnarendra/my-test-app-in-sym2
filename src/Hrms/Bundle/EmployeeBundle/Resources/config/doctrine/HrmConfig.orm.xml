@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Hrms\Bundle\EmployeeBundle\Entity\HrmConfig" table="hrm_config">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="100" nullable="false"/>
+    <field name="ckey" type="string" column="ckey" length="100" nullable="false"/>
+    <field name="value" type="string" column="value" length="255" nullable="false"/>
+    <field name="fType" type="string" column="f_type" length="20" nullable="false"/>
+    <field name="fKey" type="text" column="f_key" nullable="true"/>
+    <field name="fValue" type="text" column="f_value" nullable="true"/>
+    <field name="isEditable" type="boolean" column="is_editable" nullable="false"/>
+    <field name="comment" type="text" column="comment" nullable="true"/>
+    <field name="idSeq" type="integer" column="id_seq" nullable="true"/>
+  </entity>
+</doctrine-mapping>

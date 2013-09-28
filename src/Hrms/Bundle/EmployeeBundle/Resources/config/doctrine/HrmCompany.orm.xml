@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Hrms\Bundle\EmployeeBundle\Entity\HrmCompany" table="hrm_company">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="idCompany" type="integer" column="id_company" nullable="false"/>
+    <field name="idAdmin" type="integer" column="id_admin" nullable="false"/>
+    <field name="companyName" type="text" column="company_name" nullable="false"/>
+    <field name="companyInfo" type="text" column="company_info" nullable="true"/>
+    <field name="displayname" type="string" column="displayname" length="50" nullable="false"/>
+    <field name="emailId" type="string" column="email_id" length="100" nullable="false"/>
+    <field name="password" type="string" column="password" length="100" nullable="false"/>
+    <field name="rePassword" type="string" column="re_password" length="30" nullable="false"/>
+    <field name="role" type="integer" column="role" nullable="false"/>
+    <field name="address" type="text" column="address" nullable="false"/>
+    <field name="taxId" type="string" column="tax_id" length="100" nullable="false"/>
+    <field name="twitterId" type="string" column="twitter_id" length="255" nullable="false"/>
+    <field name="facebookId" type="string" column="facebook_id" length="255" nullable="false"/>
+    <field name="linkedinId" type="string" column="linkedin_id" length="255" nullable="false"/>
+    <field name="logo" type="string" column="logo" length="100" nullable="false"/>
+    <field name="language" type="string" column="language" length="2" nullable="false"/>
+    <field name="currency" type="string" column="currency" length="3" nullable="false"/>
+    <field name="timezone" type="float" column="timezone" nullable="false"/>
+    <field name="addDate" type="datetime" column="add_date" nullable="false"/>
+    <field name="lastLogin" type="datetime" column="last_login" nullable="false"/>
+    <field name="isactive" type="boolean" column="isactive" nullable="false"/>
+    <field name="ip" type="string" column="ip" length="20" nullable="false"/>
+  </entity>
+</doctrine-mapping>

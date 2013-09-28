@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Hrms\Bundle\EmployeeBundle\Entity\HrmMessage" table="hrm_message">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="langCode" type="string" column="lang_code" length="50" nullable="false"/>
+    <field name="keyName" type="string" column="key_name" length="50" nullable="false"/>
+    <field name="keyValue" type="string" column="key_value" length="200" nullable="false"/>
+  </entity>
+</doctrine-mapping>

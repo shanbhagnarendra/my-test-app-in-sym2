@@ -1,0 +1,49 @@
+<?php
+
+namespace Hrms\Bundle\EmployeeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * HrmEmployeeterminationcontract
+ *
+ * @ORM\Table(name="hrm__employeeterminationcontract")
+ * @ORM\Entity
+ */
+class HrmEmployeeterminationcontract
+{
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="terminate_date", type="date", nullable=false)
+     */
+    private $terminateDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reason", type="text", nullable=false)
+     */
+    private $reason;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Hrms\Bundle\EmployeeBundle\Entity\HrmEmployee
+     *
+     * @ORM\ManyToOne(targetEntity="Hrms\Bundle\EmployeeBundle\Entity\HrmEmployee")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="employee", referencedColumnName="id")
+     * })
+     */
+    private $employee;
+
+
+}

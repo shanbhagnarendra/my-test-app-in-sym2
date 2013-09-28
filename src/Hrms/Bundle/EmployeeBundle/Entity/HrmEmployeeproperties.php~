@@ -1,0 +1,87 @@
+<?php
+
+namespace Hrms\Bundle\EmployeeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * HrmEmployeeproperties
+ *
+ * @ORM\Table(name="hrm_employeeproperties")
+ * @ORM\Entity
+ */
+class HrmEmployeeproperties
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="property_name", type="string", length=255, nullable=true)
+     */
+    private $propertyName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="serial_no", type="string", length=255, nullable=true)
+     */
+    private $serialNo;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="no_of_items", type="integer", nullable=true)
+     */
+    private $noOfItems;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="notes", type="text", nullable=true)
+     */
+    private $notes;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="add_date", type="datetime", nullable=false)
+     */
+    private $addDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ip", type="string", length=20, nullable=false)
+     */
+    private $ip;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Hrms\Bundle\EmployeeBundle\Entity\HrmPropertytype
+     *
+     * @ORM\ManyToOne(targetEntity="Hrms\Bundle\EmployeeBundle\Entity\HrmPropertytype")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="property_type", referencedColumnName="id")
+     * })
+     */
+    private $propertyType;
+
+    /**
+     * @var \Hrms\Bundle\EmployeeBundle\Entity\HrmEmployee
+     *
+     * @ORM\ManyToOne(targetEntity="Hrms\Bundle\EmployeeBundle\Entity\HrmEmployee")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="employee", referencedColumnName="id")
+     * })
+     */
+    private $employee;
+
+
+}

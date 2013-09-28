@@ -1,0 +1,60 @@
+<?php
+
+namespace Hrms\Bundle\EmployeeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * HrmModules
+ *
+ * @ORM\Table(name="hrm_modules")
+ * @ORM\Entity
+ */
+class HrmModules
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="module_name", type="string", length=50, nullable=false)
+     */
+    private $moduleName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="module_value", type="string", length=50, nullable=false)
+     */
+    private $moduleValue;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="isactive", type="boolean", nullable=false)
+     */
+    private $isactive;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="create_date", type="date", nullable=false)
+     */
+    private $createDate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="orderby", type="integer", nullable=false)
+     */
+    private $orderby;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

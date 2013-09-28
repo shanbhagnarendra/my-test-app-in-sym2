@@ -1,0 +1,70 @@
+<?php
+
+namespace Hrms\Bundle\EmployeeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * HrmCompanyreminder
+ *
+ * @ORM\Table(name="hrm_companyreminder")
+ * @ORM\Entity
+ */
+class HrmCompanyreminder
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reminder", type="text", nullable=false)
+     */
+    private $reminder;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="reminder_date", type="datetime", nullable=false)
+     */
+    private $reminderDate;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="recurrence_status", type="boolean", nullable=false)
+     */
+    private $recurrenceStatus;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="status", type="boolean", nullable=false)
+     */
+    private $status;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="add_date", type="datetime", nullable=false)
+     */
+    private $addDate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_reminder", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idReminder;
+
+    /**
+     * @var \Hrms\Bundle\EmployeeBundle\Entity\HrmCompany
+     *
+     * @ORM\ManyToOne(targetEntity="Hrms\Bundle\EmployeeBundle\Entity\HrmCompany")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="company", referencedColumnName="id")
+     * })
+     */
+    private $company;
+
+
+}

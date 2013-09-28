@@ -1,0 +1,135 @@
+<?php
+
+namespace Hrms\Bundle\EmployeeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * HrmEmployeecontact
+ *
+ * @ORM\Table(name="hrm_employeecontact")
+ * @ORM\Entity
+ */
+class HrmEmployeecontact
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=50, nullable=false)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="surname", type="string", length=50, nullable=true)
+     */
+    private $surname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="relation", type="string", length=50, nullable=true)
+     */
+    private $relation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="address", type="text", nullable=true)
+     */
+    private $address;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="zipcode", type="string", length=20, nullable=true)
+     */
+    private $zipcode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mobile_phone", type="string", length=20, nullable=true)
+     */
+    private $mobilePhone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="work_phone", type="string", length=20, nullable=true)
+     */
+    private $workPhone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="home_phone", type="string", length=20, nullable=true)
+     */
+    private $homePhone;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="add_date", type="datetime", nullable=false)
+     */
+    private $addDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ip", type="string", length=20, nullable=false)
+     */
+    private $ip;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Hrms\Bundle\EmployeeBundle\Entity\HrmCountry
+     *
+     * @ORM\ManyToOne(targetEntity="Hrms\Bundle\EmployeeBundle\Entity\HrmCountry")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="country", referencedColumnName="id")
+     * })
+     */
+    private $country;
+
+    /**
+     * @var \Hrms\Bundle\EmployeeBundle\Entity\HrmState
+     *
+     * @ORM\ManyToOne(targetEntity="Hrms\Bundle\EmployeeBundle\Entity\HrmState")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="state", referencedColumnName="id")
+     * })
+     */
+    private $state;
+
+    /**
+     * @var \Hrms\Bundle\EmployeeBundle\Entity\HrmCity
+     *
+     * @ORM\ManyToOne(targetEntity="Hrms\Bundle\EmployeeBundle\Entity\HrmCity")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="city", referencedColumnName="id")
+     * })
+     */
+    private $city;
+
+    /**
+     * @var \Hrms\Bundle\EmployeeBundle\Entity\HrmEmployee
+     *
+     * @ORM\ManyToOne(targetEntity="Hrms\Bundle\EmployeeBundle\Entity\HrmEmployee")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="employee", referencedColumnName="id")
+     * })
+     */
+    private $employee;
+
+
+}

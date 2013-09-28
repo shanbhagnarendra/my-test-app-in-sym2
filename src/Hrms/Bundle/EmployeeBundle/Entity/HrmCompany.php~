@@ -1,0 +1,179 @@
+<?php
+
+namespace Hrms\Bundle\EmployeeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * HrmCompany
+ *
+ * @ORM\Table(name="hrm_company")
+ * @ORM\Entity
+ */
+class HrmCompany
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_company", type="integer", nullable=false)
+     */
+    private $idCompany;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_admin", type="integer", nullable=false)
+     */
+    private $idAdmin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="company_name", type="text", nullable=false)
+     */
+    private $companyName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="company_info", type="text", nullable=true)
+     */
+    private $companyInfo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="displayname", type="string", length=50, nullable=false)
+     */
+    private $displayname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email_id", type="string", length=100, nullable=false)
+     */
+    private $emailId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=100, nullable=false)
+     */
+    private $password;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="re_password", type="string", length=30, nullable=false)
+     */
+    private $rePassword;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="role", type="integer", nullable=false)
+     */
+    private $role;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="address", type="text", nullable=false)
+     */
+    private $address;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tax_id", type="string", length=100, nullable=false)
+     */
+    private $taxId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="twitter_id", type="string", length=255, nullable=false)
+     */
+    private $twitterId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="facebook_id", type="string", length=255, nullable=false)
+     */
+    private $facebookId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="linkedin_id", type="string", length=255, nullable=false)
+     */
+    private $linkedinId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="logo", type="string", length=100, nullable=false)
+     */
+    private $logo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="language", type="string", length=2, nullable=false)
+     */
+    private $language;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="currency", type="string", length=3, nullable=false)
+     */
+    private $currency;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="timezone", type="float", nullable=false)
+     */
+    private $timezone;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="add_date", type="datetime", nullable=false)
+     */
+    private $addDate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="last_login", type="datetime", nullable=false)
+     */
+    private $lastLogin;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="isactive", type="boolean", nullable=false)
+     */
+    private $isactive;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ip", type="string", length=20, nullable=false)
+     */
+    private $ip;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

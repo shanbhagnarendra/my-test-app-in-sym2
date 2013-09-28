@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Hrms\Bundle\EmployeeBundle\Entity\HrmCompanyfolder" table="hrm_companyfolder">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="idParent" type="integer" column="id_parent" nullable="false"/>
+    <field name="folderName" type="string" column="folder_name" length="100" nullable="false"/>
+    <field name="addDate" type="datetime" column="add_date" nullable="false"/>
+    <many-to-one field="company" target-entity="HrmCompany">
+      <join-columns>
+        <join-column name="company" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

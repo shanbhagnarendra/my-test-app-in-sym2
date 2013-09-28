@@ -1,0 +1,7 @@
+parameters:
+#    hrms_employee.example.class: Hrms\Bundle\EmployeeBundle\Example
+
+services:
+#    hrms_employee.example:
+#        class: %hrms_employee.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

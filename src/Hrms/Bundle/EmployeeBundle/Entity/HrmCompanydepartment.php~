@@ -1,0 +1,49 @@
+<?php
+
+namespace Hrms\Bundle\EmployeeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * HrmCompanydepartment
+ *
+ * @ORM\Table(name="hrm_companydepartment")
+ * @ORM\Entity
+ */
+class HrmCompanydepartment
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dept_name", type="string", length=255, nullable=false)
+     */
+    private $deptName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="notes", type="text", nullable=false)
+     */
+    private $notes;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Hrms\Bundle\EmployeeBundle\Entity\HrmCompanydivision
+     *
+     * @ORM\ManyToOne(targetEntity="Hrms\Bundle\EmployeeBundle\Entity\HrmCompanydivision")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="division", referencedColumnName="id")
+     * })
+     */
+    private $division;
+
+
+}

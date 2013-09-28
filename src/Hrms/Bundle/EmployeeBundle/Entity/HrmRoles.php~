@@ -1,0 +1,46 @@
+<?php
+
+namespace Hrms\Bundle\EmployeeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * HrmRoles
+ *
+ * @ORM\Table(name="hrm_roles")
+ * @ORM\Entity
+ */
+class HrmRoles
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="role_name", type="string", length=30, nullable=false)
+     */
+    private $roleName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="role_description", type="string", length=100, nullable=false)
+     */
+    private $roleDescription;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="create_date", type="date", nullable=false)
+     */
+    private $createDate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

@@ -1,0 +1,76 @@
+<?php
+
+namespace Hrms\Bundle\EmployeeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * HrmRolefeatures
+ *
+ * @ORM\Table(name="hrm_rolefeatures")
+ * @ORM\Entity
+ */
+class HrmRolefeatures
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="isvisible", type="integer", nullable=false)
+     */
+    private $isvisible;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_1", type="integer", nullable=false)
+     */
+    private $id1;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="isvisible_1", type="integer", nullable=false)
+     */
+    private $isvisible1;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Hrms\Bundle\EmployeeBundle\Entity\HrmModulefeatures
+     *
+     * @ORM\ManyToOne(targetEntity="Hrms\Bundle\EmployeeBundle\Entity\HrmModulefeatures")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="modulefeatures", referencedColumnName="id")
+     * })
+     */
+    private $modulefeatures;
+
+    /**
+     * @var \Hrms\Bundle\EmployeeBundle\Entity\HrmModules
+     *
+     * @ORM\ManyToOne(targetEntity="Hrms\Bundle\EmployeeBundle\Entity\HrmModules")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="modules", referencedColumnName="id")
+     * })
+     */
+    private $modules;
+
+    /**
+     * @var \Hrms\Bundle\EmployeeBundle\Entity\HrmRoles
+     *
+     * @ORM\ManyToOne(targetEntity="Hrms\Bundle\EmployeeBundle\Entity\HrmRoles")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="roles", referencedColumnName="id")
+     * })
+     */
+    private $roles;
+
+
+}

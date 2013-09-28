@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Hrms\Bundle\EmployeeBundle\Entity\HrmEmployeecontact" table="hrm_employeecontact">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="50" nullable="false"/>
+    <field name="surname" type="string" column="surname" length="50" nullable="true"/>
+    <field name="relation" type="string" column="relation" length="50" nullable="true"/>
+    <field name="address" type="text" column="address" nullable="true"/>
+    <field name="zipcode" type="string" column="zipcode" length="20" nullable="true"/>
+    <field name="mobilePhone" type="string" column="mobile_phone" length="20" nullable="true"/>
+    <field name="workPhone" type="string" column="work_phone" length="20" nullable="true"/>
+    <field name="homePhone" type="string" column="home_phone" length="20" nullable="true"/>
+    <field name="addDate" type="datetime" column="add_date" nullable="false"/>
+    <field name="ip" type="string" column="ip" length="20" nullable="false"/>
+    <many-to-one field="country" target-entity="HrmCountry">
+      <join-columns>
+        <join-column name="country" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="state" target-entity="HrmState">
+      <join-columns>
+        <join-column name="state" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="city" target-entity="HrmCity">
+      <join-columns>
+        <join-column name="city" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="employee" target-entity="HrmEmployee">
+      <join-columns>
+        <join-column name="employee" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

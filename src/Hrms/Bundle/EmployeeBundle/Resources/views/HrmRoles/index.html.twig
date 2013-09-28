@@ -1,0 +1,58 @@
+{% javascripts '@HrmsEmployeeBundle/Resources/public/js/jquery.min.js' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% javascripts '@HrmsEmployeeBundle/Resources/public/js/*' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% stylesheets '@HrmsEmployeeBundle/Resources/public/css/*' filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+{% endstylesheets %}
+{% block body -%}
+    <h2>Roles list</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Rolename</th>
+                <th>Roledescription</th>
+                <th>Createdate</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('hrmroles_show', { 'id': entity.id }) }}">{{ entity.roleName }}</a></td>
+                <td>{{ entity.roleDescription }}</td>
+                <td>{% if entity.createDate %}{{ entity.createDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.id }}</td>
+                <td>
+                <div class="btn-group">
+  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+    Action
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu">
+    <!-- dropdown menu links -->
+             <li>
+                        <a href="{{ path('hrmroles_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('hrmroles_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+       
+  </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        <ul class="nav-pills">
+        <li class="active">
+            <a href="{{ path('hrmroles_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

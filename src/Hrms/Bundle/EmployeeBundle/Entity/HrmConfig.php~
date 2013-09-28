@@ -1,0 +1,88 @@
+<?php
+
+namespace Hrms\Bundle\EmployeeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * HrmConfig
+ *
+ * @ORM\Table(name="hrm_config")
+ * @ORM\Entity
+ */
+class HrmConfig
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=100, nullable=false)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ckey", type="string", length=100, nullable=false)
+     */
+    private $ckey;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="value", type="string", length=255, nullable=false)
+     */
+    private $value;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="f_type", type="string", length=20, nullable=false)
+     */
+    private $fType;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="f_key", type="text", nullable=true)
+     */
+    private $fKey;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="f_value", type="text", nullable=true)
+     */
+    private $fValue;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="is_editable", type="boolean", nullable=false)
+     */
+    private $isEditable;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="comment", type="text", nullable=true)
+     */
+    private $comment;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_seq", type="integer", nullable=true)
+     */
+    private $idSeq;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

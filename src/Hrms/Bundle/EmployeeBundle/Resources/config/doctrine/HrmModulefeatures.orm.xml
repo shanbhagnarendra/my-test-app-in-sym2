@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Hrms\Bundle\EmployeeBundle\Entity\HrmModulefeatures" table="hrm_modulefeatures">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="featuresName" type="string" column="features_name" length="50" nullable="false"/>
+    <field name="featuresValue" type="string" column="features_value" length="50" nullable="false"/>
+    <field name="iswriteaccess" type="boolean" column="iswriteaccess" nullable="false"/>
+    <field name="createDate" type="date" column="create_date" nullable="false"/>
+    <many-to-one field="modules" target-entity="HrmModules">
+      <join-columns>
+        <join-column name="modules" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

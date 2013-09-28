@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Hrms\Bundle\EmployeeBundle\Entity\HrmAgegroup" table="hrm_agegroup">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="colorCode" type="string" column="color_code" length="10" nullable="false"/>
+    <field name="ageLimit" type="string" column="age_limit" length="15" nullable="false"/>
+    <field name="startAge" type="integer" column="start_age" nullable="true"/>
+    <field name="endAge" type="integer" column="end_age" nullable="true"/>
+  </entity>
+</doctrine-mapping>

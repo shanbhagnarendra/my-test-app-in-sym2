@@ -1,0 +1,62 @@
+hrms_employee_homepage:
+    pattern:  /employee
+    defaults: { _controller: HrmsEmployeeBundle:HrmCountry:index }
+hrmcountry:
+    path:      /country/
+    defaults:  { _controller: HrmsEmployeeBundle:HrmCountry:index}
+    
+hrmcountry_show:
+    path:      /country/{id}/show/
+    defaults:  { _controller: HrmsEmployeeBundle:HrmCountry:show}
+hrmcountry_edit:
+    path:      /country/{id}/edit
+    defaults:  { _controller: HrmsEmployeeBundle:HrmCountry:edit}
+hrmcountry_new:
+    path:      /country/new
+    defaults:  { _controller: HrmsEmployeeBundle:HrmCountry:new}
+hrmcountry_delete:
+    path:      /country/{id}/delete
+    defaults:  { _controller: HrmsEmployeeBundle:HrmCountry:delete}
+hrmcountry_update:
+    path:      /country/{id}/update
+    defaults:  { _controller: HrmsEmployeeBundle:HrmCountry:update}      
+hrmstate:
+    path:      /state/
+    defaults:  { _controller: HrmsEmployeeBundle:HrmState:index}
+hrmstate_show:
+    path:      /state/{id}/show/
+    defaults:  { _controller: HrmsEmployeeBundle:HrmState:show}
+hrmstate_edit:
+    path:      /state/{id}/edit
+    defaults:  { _controller: HrmsEmployeeBundle:HrmState:edit}
+hrmstate_new:
+    path:      /state/new
+    defaults:  { _controller: HrmsEmployeeBundle:HrmState:new}
+hrmstate_delete:
+    path:      /state/{id}/delete
+    defaults:  { _controller: HrmsEmployeeBundle:HrmState:delete}
+hrmstate_update:
+    path:      /state/{id}/update
+    defaults:  { _controller: HrmsEmployeeBundle:HrmState:update} 
+hrmroles:
+    path:      /roles/
+    defaults:  { _controller: HrmsEmployeeBundle:HrmRoles:index}
+hrmroles_show:
+    path:      /roles/{id}/show/
+    defaults:  { _controller: HrmsEmployeeBundle:HrmRoles:show}
+hrmroles_edit:
+    path:      /roles/{id}/edit
+    defaults:  { _controller: HrmsEmployeeBundle:HrmRoles:edit}
+hrmroles_new:
+    path:      /roles/new
+    defaults:  { _controller: HrmsEmployeeBundle:HrmRoles:new}
+hrmroles_delete:
+    path:      /roles/{id}/delete
+    defaults:  { _controller: HrmsEmployeeBundle:HrmRoles:delete}
+hrmroles_update:
+    path:      /roles/{id}/update
+    defaults:  { _controller: HrmsEmployeeBundle:HrmRoles:update}
+hrmroles_create:
+    path:      /roles/create
+    defaults:  { _controller: HrmsEmployeeBundle:HrmRoles:create}
+  
