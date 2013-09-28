@@ -1,13 +1,40 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+{% javascripts '@HrmsEmployeeBundle/Resources/public/js/jquery.min.js' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% javascripts '@HrmsEmployeeBundle/Resources/public/js/*' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% stylesheets '@HrmsEmployeeBundle/Resources/public/css/*'  %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+{% endstylesheets %}
+  </head>
+
+  <body>
+  {% block navigation %}
+  {% endblock %}
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+      {% block body %}{% endblock %}
+	  </div>
+    </div>
+
+    <div class="container">
+      <footer>
+                {% block footer %}
+	  <p>&copy; Company 2013</p>
+	    {% endblock %}
+      </footer>
+    </div> <!-- /container -->
+
+
+  </body>
 </html>

@@ -1,12 +1,7 @@
-{% javascripts '@HrmsEmployeeBundle/Resources/public/js/jquery.min.js' %}
-    <script type="text/javascript" src="{{ asset_url }}"></script>
-{% endjavascripts %}
-{% javascripts '@HrmsEmployeeBundle/Resources/public/js/*' %}
-    <script type="text/javascript" src="{{ asset_url }}"></script>
-{% endjavascripts %}
-{% stylesheets '@HrmsEmployeeBundle/Resources/public/css/*' filter='cssrewrite' %}
-    <link rel="stylesheet" href="{{ asset_url }}" />
-{% endstylesheets %}
+{% extends '::base.html.twig' %}
+{% block navigation -%}
+{% include 'HrmsEmployeeBundle::Common/header.html.twig' %}
+{% endblock %}
 {% block body -%}
     <h2>Roles list</h2>
 
